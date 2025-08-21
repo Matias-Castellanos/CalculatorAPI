@@ -12,6 +12,25 @@ namespace CalculatorAPI.Controllers
             var result = a + b;
             return Ok(new{a, b, result});
         }
+        [HttpGet("sub")]
+        public IActionResult GetSubs([FromQuery] int a, [FromQuery] int b)
+        {
+            var result = a - b;
+            return Ok(new{a, b, result});
+        }
+        [HttpGet("mult")]
+        public IActionResult Getmult([FromQuery] int a, [FromQuery] int b)
+        {
+            var result = a * b;
+            return Ok(new{a, b, result});
+        }
+        [HttpGet("div")]
+        public IActionResult Getdiv([FromQuery] int a, [FromQuery] int b)
+        {
+            var result = a / b;
+            return Ok(new{a, b, result});
+        }
+
     }
 }
 
