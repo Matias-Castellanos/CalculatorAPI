@@ -27,8 +27,15 @@ namespace CalculatorAPI.Controllers
         [HttpGet("div")]
         public IActionResult Getdiv([FromQuery] int a, [FromQuery] int b)
         {
-            var result = a / b;
-            return Ok(new{a, b, result});
+            if (b==0)
+            {
+                return BadRequest("No es posible dividirlo entre 0");
+            }
+            else
+            {
+                var result = a / b;
+                return Ok(new{a, b, result});
+            }
         }
 
     }
