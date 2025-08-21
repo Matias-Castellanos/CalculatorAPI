@@ -27,7 +27,7 @@ namespace CalculatorAPI.Controllers
         [HttpGet("div")]
         public IActionResult Getdiv([FromQuery] int a, [FromQuery] int b)
         {
-            if (b==0)
+            if (b == 0)
             {
                 return BadRequest("No es posible dividirlo entre 0");
             }
